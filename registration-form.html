@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <h1>User Registration</h1>
+
+    <form action="/register" method="POST" enctype="multipart/form-data">
+
+        <!-- ======================================= -->
+        <!-- TODO 1: مجموعة المعلومات الشخصية -->
+        <!-- ======================================= -->
+        <!-- أنشئ <fieldset> مع <legend> "Personal Information" -->
+        <!-- أضف الحقول التالية مع التسميات (labels): -->
+        <!--   - Full Name: type="text", id="fullname", required, minlength="3" -->
+        <!--   - Email: type="email", id="email", required -->
+        <!--   - Password: type="password", id="password", required, minlength="8" -->
+        <!--   - Confirm Password: type="password", id="confirm-password", required -->
+        <!--   - Date of Birth: type="date", id="dob", required -->
+        <!-- تذكّر: كل حقل يحتاج إلى <label for="..."> -->
+<fieldset>
+    <legend>Personal Information</legend>
+
+    <p>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required minlength="3">
+    </p>
+
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </p>
+
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8">
+    </p>
+
+    <p>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required minlength="8">
+    </p>
+
+    <p>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+    </p>
+</fieldset>
+
+        <!-- ======================================= -->
+        <!-- TODO 2: مجموعة معلومات التواصل -->
+        <!-- ======================================= -->
+        <!-- أنشئ <fieldset> مع <legend> "Contact Information" -->
+        <!-- أضف: -->
+        <!--   - Phone: type="tel", id="phone", pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
+        <!--           title="Format: 059-123-4567" -->
+        <!--   - Address: <textarea>, id="address", rows="3", cols="40" -->
+        <!--   - City: <select>, id="city", with options: -->
+        <!--           "-- Select City --" (value=""), Gaza, Khan Younis, -->
+        <!--           Rafah, Deir al-Balah, Jabalia -->
+<fieldset>
+    <legend>Contact Information</legend>
+
+    <p>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+               title="Format: 059-123-4567"
+               placeholder="059-123-4567">
+    </p>
+
+    <p>
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="3" cols="40"></textarea>
+    </p>
+
+    <p>
+        <label for="city">City:</label>
+        <select id="city" name="city">
+            <option value="">-- Select City --</option>
+            <option value="gaza">Gaza</option>
+            <option value="khan-younis">Khan Younis</option>
+            <option value="rafah">Rafah</option>
+            <option value="deir-al-balah">Deir al-Balah</option>
+            <option value="jabalia">Jabalia</option>
+        </select>
+    </p>
+</fieldset>
+
+        <!-- ======================================= -->
+        <!-- TODO 3: مجموعة التفضيلات -->
+        <!-- ======================================= -->
+        <!-- أنشئ <fieldset> مع <legend> "Preferences" -->
+        <!-- أضف: -->
+        <!--   - الجنس (أزرار radio): -->
+        <!--     <input type="radio" id="male" name="gender" value="male"> -->
+        <!--     <label for="male">Male</label> -->
+        <!--     <input type="radio" id="female" name="gender" value="female"> -->
+        <!--     <label for="female">Female</label> -->
+        <!-- -->
+        <!--   - الاهتمامات (checkboxes): 5 خيارات على الأقل -->
+        <!--     Coding, Design, Gaming, Reading, Sports -->
+        <!--     كل خيار يحتاج إلى id و name="interests" و value و label -->
+        <!-- -->
+        <!--   - مستوى المهارة (شريط range): -->
+        <!--     <input type="range" id="skill" name="skill" min="1" max="10" value="5"> -->
+        <!--     <label for="skill">Skill Level (1-10):</label> -->
+
+<fieldset>
+    <legend>Preferences</legend>
+
+    <p>Gender:</p>
+    <p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+    </p>
+
+    <p>Interests:</p>
+    <p>
+        <input type="checkbox" id="coding" name="interests" value="coding">
+        <label for="coding">Coding</label>
+
+        <input type="checkbox" id="design" name="interests" value="design">
+        <label for="design">Design</label>
+
+        <input type="checkbox" id="gaming" name="interests" value="gaming">
+        <label for="gaming">Gaming</label>
+
+        <input type="checkbox" id="reading" name="interests" value="reading">
+        <label for="reading">Reading</label>
+
+        <input type="checkbox" id="sports" name="interests" value="sports">
+        <label for="sports">Sports</label>
+    </p>
+
+    <p>
+        <label for="skill">Skill Level (1-10):</label>
+        <input type="range" id="skill" name="skill" min="1" max="10" value="5">
+    </p>
+</fieldset>
+        <!-- ======================================= -->
+        <!-- TODO 4: الصورة الشخصية -->
+        <!-- ======================================= -->
+        <!-- أضف حقل ملف (file) للصورة الشخصية: -->
+        <!--   <label for="photo">Profile Picture:</label> -->
+        <!--   <input type="file" id="photo" name="photo" accept="image/*"> -->
+
+<p>
+    <label for="photo">Profile Picture:</label>
+    <input type="file" id="photo" name="photo" accept="image/*">
+</p>
+        <!-- ======================================= -->
+        <!-- TODO 5: الشروط والأزرار -->
+        <!-- ======================================= -->
+        <!-- أضف: -->
+        <!--   - مربع اختيار الشروط (مطلوب): -->
+        <!--     <input type="checkbox" id="terms" name="terms" required> -->
+        <!--     <label for="terms">I agree to the Terms and Conditions</label> -->
+        <!-- -->
+        <!--   - زر الإرسال: <button type="submit">Register</button> -->
+        <!--   - زر إعادة التعيين: <button type="reset">Clear Form</button> -->
+<p>
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the Terms and Conditions</label>
+</p>
+
+<p>
+    <button type="submit">Register</button>
+    <button type="reset">Clear Form</button>
+</p>
+    </form>
+
+</body>
+</html>
